@@ -1656,6 +1656,7 @@ class Scalene:
         for pid in Scalene.child_pids:
             Scalene.__orig_kill(pid, Scalene.__signals.stop_profiling_signal)
         Scalene.stop()
+        Scalene.enable_signals()
         # Output the profile if `--outfile` was set to a file.
         if Scalene.__output.output_file:
             Scalene.output_profile(sys.argv)
